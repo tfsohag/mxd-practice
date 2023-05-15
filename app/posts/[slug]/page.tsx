@@ -3,7 +3,7 @@ import { allPosts, Post } from 'contentlayer/generated';
 
 export const generateStaticParams = async () => {
     const paths = allPosts.map((post: Post) => {
-        return {slug: `posts/${post._raw.flattenedPath}`}
+        return {slug: post._raw.flattenedPath.replace('posts/', '')}
     });
     return paths
 }
