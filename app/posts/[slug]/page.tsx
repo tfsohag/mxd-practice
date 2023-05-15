@@ -1,11 +1,10 @@
 import React from 'react'
 import { allPosts, Post } from 'contentlayer/generated';
 
-export const generateStaticParams = () => {
+export const generateStaticParams = async () => {
     const paths = allPosts.map((post: Post) => {
         return {params: {slug:post.url}}
     });
-    console.log(paths)
     return paths
 }
 
